@@ -1,2 +1,2 @@
 #!/bin/bash
-mkdir test
+sudo mkdir /home/ec2-user/test
