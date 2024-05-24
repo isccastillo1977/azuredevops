@@ -1,18 +1,1 @@
-sudo su - ec2-user
-sudo yum update -y
-sudo amazon-linux-extras install epel -y
-sudo yum install openssl11-devel -y
-sudo yum install bzip2-devel libffi-devel -y
-sudo yum groupinstall "Development Tools" -y
-cd $HOME
-wget https://www.python.org/ftp/python/3.10.9/Python-3.10.9.tgz
-tar zxvf Python-3.10.9.tgz
-cd Python-3.10.9
-sed -i 's/PKG_CONFIG openssl /PKG_CONFIG openssl11 /g' configure
-./configure --enable-optimizations
-sudo make altinstall
-sudo yum install libaio -y
-aws s3 cp s3://aws-supplymgmt-edi-prod-useast1-vpn-system/oracle-instantclient19.14-basic-19.14.0.0.0-1.x86_64.rpm oracle-instantclient19.14-basic-19.14.0.0.0-1.x86_64.rpm
-sudo rpm -i oracle-instantclient19.14-basic-19.14.0.0.0-1.x86_64.rpm
-sudo yum install sshpass -y
-sudo systemctl start docker
+c3VkbyBzdSAtIGVjMi11c2VyCnN1ZG8geXVtIHVwZGF0ZSAteQpzdWRvIGFtYXpvbi1saW51eC1leHRyYXMgaW5zdGFsbCBlcGVsIC15CnN1ZG8geXVtIGluc3RhbGwgb3BlbnNzbDExLWRldmVsIC15CnN1ZG8geXVtIGluc3RhbGwgYnppcDItZGV2ZWwgbGliZmZpLWRldmVsIC15CnN1ZG8geXVtIGdyb3VwaW5zdGFsbCAiRGV2ZWxvcG1lbnQgVG9vbHMiIC15CmNkICRIT01FCndnZXQgaHR0cHM6Ly93d3cucHl0aG9uLm9yZy9mdHAvcHl0aG9uLzMuMTAuOS9QeXRob24tMy4xMC45LnRnegp0YXIgenh2ZiBQeXRob24tMy4xMC45LnRnegpjZCBQeXRob24tMy4xMC45CnNlZCAtaSAncy9QS0dfQ09ORklHIG9wZW5zc2wgL1BLR19DT05GSUcgb3BlbnNzbDExIC9nJyBjb25maWd1cmUKLi9jb25maWd1cmUgLS1lbmFibGUtb3B0aW1pemF0aW9ucwpzdWRvIG1ha2UgYWx0aW5zdGFsbApzdWRvIHl1bSBpbnN0YWxsIGxpYmFpbyAteQphd3MgczMgY3AgczM6Ly9hd3Mtc3VwcGx5bWdtdC1lZGktcHJvZC11c2Vhc3QxLXZwbi1zeXN0ZW0vb3JhY2xlLWluc3RhbnRjbGllbnQxOS4xNC1iYXNpYy0xOS4xNC4wLjAuMC0xLng4Nl82NC5ycG0gb3JhY2xlLWluc3RhbnRjbGllbnQxOS4xNC1iYXNpYy0xOS4xNC4wLjAuMC0xLng4Nl82NC5ycG0Kc3VkbyBycG0gLWkgb3JhY2xlLWluc3RhbnRjbGllbnQxOS4xNC1iYXNpYy0xOS4xNC4wLjAuMC0xLng4Nl82NC5ycG0Kc3VkbyB5dW0gaW5zdGFsbCBzc2hwYXNzIC15CnN1ZG8gc3lzdGVtY3RsIHN0YXJ0IGRvY2tlcg==
